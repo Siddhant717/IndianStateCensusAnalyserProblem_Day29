@@ -22,6 +22,8 @@ namespace TestProject1
         static string indianStateCodeFilePath = @"D:\AllAssignment\IndianStateAnalyser\IndianStatesCensusAnalyser\IndianStatesCensusAnalyser\CSV\IndiaStateCodes.csv";
         static string wrongIndianStateCodeFilePath = @"D:\AllAssignment\IndianStateAnalyser\IndianStatesCensusAnalyser\IndianStatesCensusAnalyser\CSV\IndianStatesCodes.csv";
         static string wrongIndianStateCodeFileType = @"D:\AllAssignment\IndianStateAnalyser\IndianStatesCensusAnalyser\IndianStatesCensusAnalyser\CSV\IndiaStateCodes.txt";
+        static string delimiterIndianStateCodeFilePath = @"D:\AllAssignment\IndianStateAnalyser\IndianStatesCensusAnalyser\IndianStatesCensusAnalyser\CSV\DelimiterIndiaStateCodes.csv";
+
         IndianStatesCensusAnalyser.CensusAnalyser censusAnalyser;
         Dictionary<string, CensusDTO> totalRecord;
         Dictionary<string, CensusDTO> stateRecord;
@@ -75,6 +77,7 @@ namespace TestProject1
         }
         //TC 2.1 -  - Check to ensure the Number of Record matches
         [Test]
+
         public void GivenIndianCodeFilePath_WhenReaded_ShouldReturnStateCodeCount()
         {
             stateRecord = censusAnalyser.LoadCensusData(CensusAnalyser.Country.INDIA, indianStateCodeFilePath, indianStateCodeHeaders);
@@ -93,6 +96,14 @@ namespace TestProject1
         {
             var stateCodeException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(CensusAnalyser.Country.INDIA, wrongIndianStateCodeFileType, indianStateCodeHeaders));
             Assert.AreEqual(CensusAnalyserException.ExceptionType.INVALID_FILE_TYPE, stateCodeException.eType);
+        }
+        //TC 2.4 -  - While giving incorrect Delimeter it should Returns a custom Exception
+        [Test]
+        public void GivenWrongIndianStateCodeDelimiter_WhenReaded_ShouldReturnINCORRECT_DELIMITER()
+        {
+            var stateCodeException = Assert.Throws<CensusAnalyserException>(() => censusAnalyser.LoadCensusData(CensusAnalyser.Country.INDIA, delimiterIndianStateCodeFilePath, indianStateCodeHeaders));
+            Assert.AreEqual(CensusAnalyserException.ExceptionType.INCORRECT_DELIMITER, stateCodeException.eType);
+
         }
     }
 }
