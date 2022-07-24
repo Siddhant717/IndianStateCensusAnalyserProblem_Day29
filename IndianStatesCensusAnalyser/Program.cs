@@ -14,7 +14,11 @@ namespace IndianStatesCensusAnalyser
         // static string wrongIndianStateCensusFileType = @"D:\AllAssignment\IndianStateAnalyser\IndianStatesCensusAnalyser\IndianStatesCensusAnalyser\CSV\IndianStateCensus.txt";
         // static string delimiterIndianCensusFilePath = @"D:\AllAssignment\IndianStateAnalyser\IndianStatesCensusAnalyser\IndianStatesCensusAnalyser\CSV\IndianStateCesusDelimeter.csv";
         // static string wrongHeaderIndianCensusFilePath = @"D:\AllAssignment\IndianStateAnalyser\IndianStatesCensusAnalyser\IndianStatesCensusAnalyser\CSV\WrongIndiaStateCensusData.csv";
-        static string indianStateCodeFilePath = @"D:\AllAssignment\IndianStateAnalyser\IndianStatesCensusAnalyser\IndianStatesCensusAnalyser\CSV\IndiaStateCodes.csv";
+
+        //-----------------------------------------------------------------------------//
+
+        // static string indianStateCodeFilePath = @"D:\AllAssignment\IndianStateAnalyser\IndianStatesCensusAnalyser\IndianStatesCensusAnalyser\CSV\IndiaStateCodes.csv";
+        static string wrongIndianStateCodeFilePath = @"D:\AllAssignment\IndianStateAnalyser\IndianStatesCensusAnalyser\IndianStatesCensusAnalyser\CSV\IndianStatesCodes.csv";
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Indian State Census Analyser Problem ");
@@ -36,7 +40,10 @@ namespace IndianStatesCensusAnalyser
             //indianCensusAdapter.LoadCensusData(wrongHeaderIndianCensusFilePath, indianStateCensusHeaders);
 
             //Loading the State census Data File
-            indianCensusAdapter.LoadCensusData(indianStateCodeFilePath, indianStateCodeHeaders);
+            // indianCensusAdapter.LoadCensusData(indianStateCodeFilePath, indianStateCodeHeaders);
+
+            //2.2
+            indianCensusAdapter.LoadCensusData(wrongIndianStateCodeFilePath, indianStateCodeHeaders);
         }
 
     }
