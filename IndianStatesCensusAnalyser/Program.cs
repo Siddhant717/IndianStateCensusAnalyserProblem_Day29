@@ -15,7 +15,6 @@ namespace IndianStatesCensusAnalyser
             Console.WriteLine("Welcome to Indian State Census Analyser Problem ");
 
             IndianCensusAdapter indianCensusAdapter = new IndianCensusAdapter();
-
             // Loading the Census Data File
             indianCensusAdapter.LoadCensusData(indianStateCensusFilePath, indianStateCensusHeaders);
         }
