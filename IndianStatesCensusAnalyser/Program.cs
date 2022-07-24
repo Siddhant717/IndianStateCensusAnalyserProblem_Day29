@@ -9,6 +9,7 @@ namespace IndianStatesCensusAnalyser
 
         static string indianStateCensusFilePath = @"D:\AllAssignment\IndianStateAnalyser\IndianStatesCensusAnalyser\IndianStatesCensusAnalyser\CSV\IndiaStateCensusData.csv";
         static string wrongIndianStateCensusFilePath = @"D:\AllAssignment\IndianStateAnalyser\IndianStatesCensusAnalyser\IndianStatesCensusAnalyser\CSV\IndiaStateData.csv";
+        static string wrongIndianStateCensusFileType = @"D:\AllAssignment\IndianStateAnalyser\IndianStatesCensusAnalyser\IndianStatesCensusAnalyser\CSV\IndianStateCensus.txt";
 
 
         static void Main(string[] args)
@@ -17,9 +18,13 @@ namespace IndianStatesCensusAnalyser
 
             IndianCensusAdapter indianCensusAdapter = new IndianCensusAdapter();
             // Loading the Census Data File
-            indianCensusAdapter.LoadCensusData(indianStateCensusFilePath, indianStateCensusHeaders);
+           // indianCensusAdapter.LoadCensusData(indianStateCensusFilePath, indianStateCensusHeaders);
+
             //1.2
-            indianCensusAdapter.LoadCensusData(wrongIndianStateCensusFilePath, indianStateCensusHeaders);
+           // indianCensusAdapter.LoadCensusData(wrongIndianStateCensusFilePath, indianStateCensusHeaders);
+
+            //1.3
+            indianCensusAdapter.LoadCensusData(wrongIndianStateCensusFileType, indianStateCensusHeaders);
         }
     }
 }
