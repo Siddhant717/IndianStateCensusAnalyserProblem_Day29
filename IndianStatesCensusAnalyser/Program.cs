@@ -35,6 +35,7 @@ namespace IndianStatesCensusAnalyser
             //1.5
             //indianCensusAdapter.LoadCensusData(wrongHeaderIndianCensusFilePath, indianStateCensusHeaders);
 
+            //Loading the State census Data File
             indianCensusAdapter.LoadCensusData(indianStateCodeFilePath, indianStateCodeHeaders);
         }
 
